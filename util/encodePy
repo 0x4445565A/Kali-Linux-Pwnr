@@ -1,0 +1,8 @@
+#!/usr/bin/python
+import fileinput, sys, time, base64
+code = ''
+for l in fileinput.input():
+  code = code + l
+print "python -c \"import base64;p=1338;eval(compile(base64.b64decode('" + base64.b64encode(code) + "'), '<string>', 'exec'));\""
+
+#print base64.b64encode(code)
